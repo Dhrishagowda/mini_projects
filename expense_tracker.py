@@ -4,9 +4,14 @@ while True:
   print('1. Add expenses')
   print('2. view expenses')
   print('3. calculate total expenses')
-  print('5. exit')
   print('4. category wise summary')
-  choice=int(input("enter your choice: "))
+  print('5. delete an expense')
+  print('6. exit')
+  try :
+    choice=int(input('enter your choice'))
+  except ValueError:
+    print('invalid input! enter number')
+    continue
   if choice==1:
     print('adding expenses')
     expense_name=input('enter the expense name:')
@@ -26,7 +31,7 @@ while True:
        print('no expenses added yet')
     else:
        print('\n ---your expenses---')
-    for expense in expenses:
+       for expense in expenses:
         print('name :',expense["name"])
         print('amount : Rs',expense["amount"])
         print('category :' ,expense["category"])
@@ -56,6 +61,16 @@ while True:
             print(category, ":", total)
 
   elif choice==5:
+     print('----YOUR EXPENSES----')
+     if len(expenses)==0:
+        print('no expenses added yet')
+     else:
+          for i, expense in enumerate(expenses, start=1):
+           print(i, expense["name"], '- Rs', expense["amount"])
+          number=int(input('enter the expense to be deleted:'))
+          expenses.pop(number-1)
+
+  elif choice==6:
     print('thankyou for using the tracker!')
     exit()
 
