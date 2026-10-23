@@ -1,8 +1,5 @@
 expenses=[] 
 while True:
-
-  print('1. Add expenses')
-  print('2. view expenses')
   print('3. calculate total expenses')
   print('4. category wise summary')
   print('5. delete an expense')
