@@ -64,9 +64,7 @@ def delete():
         else:
                 print('invalid expense number')
 
-def exit():
-    print('thankyou for using the tracker!')
-    exit()
+    
 
 def by_category():
      category=input('enter category to search')
@@ -77,8 +75,8 @@ def by_category():
           print('category:', expense["category"])
           print('amount : Rs',expense["amount"])
           found=True
-        if found==False:
-               print('no expenses found in the category')
+     if found==False:
+         print('no expenses found in the category')
 
 def edit():
     print('-----edit expenses-----')
@@ -132,7 +130,8 @@ while True:
   elif choice==5:
      delete()
   elif choice==6:
-    exit()
+    print('thankyou for using the tracker')
+    break
 
   elif choice==7:
     by_category()
